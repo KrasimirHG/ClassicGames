@@ -1,0 +1,60 @@
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+.container {
+	width: 80%;
+	margin: auto;
+	border: 2px solid;
+	background-color: #59a4cd;
+}
+.menu {
+	width: 100%;
+	display: flex;
+	background-color: #da956a;
+	padding: 10px;
+}
+.color-choice {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	align-items: center;
+}
+.dimensions {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	align-items: center;
+}
+h3 {
+	background-color: #396824;
+	text-align: center;
+	padding: 10px;
+}
+.grid {
+	width: 214px; /* 7x6*/
+	height: 184px;
+	border: 2px solid;
+	margin: 5vh auto;
+	background-color: pink;
+	display: flex;
+	flex-wrap: wrap;
+}
+.grid div {
+	width: 30px;
+	height: 30px;
+}
+.player-1 {
+	background-color: red;
+	border: 1px solid;
+}
+.player-2 {
+	background-color: blue;
+	border: 1px solid;
+}

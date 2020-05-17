@@ -1,0 +1,98 @@
+.container {
+	margin-top: 5%;
+	border: 2px solid;
+	background: #59a4cd;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	align-items: center;
+}
+.menu {
+	min-width: 100%;
+	display: flex;
+	background-color: #da956a;
+	padding: 10px;
+	justify-content: bottom;
+}
+.color-choice {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	align-items: center;
+}
+.dimensions {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	align-items: center;
+}
+h3 {
+	text-align: center;
+	padding: 10px;
+}
+.start {
+	position: relative;
+}
+.start button {
+	font-size: 2rem;
+}
+.mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: none;
+}
+.grid {
+	outline: 1px solid;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: white;
+	height: 360px;
+	width: 360px;
+	margin-bottom: 20px;
+}
+
+.grid div {
+	height: 40px;
+	width: 40px;
+}
+.ending-block {
+	background-color: red;
+}
+
+.starting-block {
+	background-color: blue;
+}
+
+.c1 {
+	background: black url("car1.svg") no-repeat center;
+}
+
+.c4 {
+	background: black url("car3.svg") no-repeat center;
+}
+.l1,
+.l2,
+.l3 {
+	background: brown url("log.svg") no-repeat bottom;
+}
+
+.l4,
+.l5,
+.lf2,
+.lf3 {
+	background-color: lightblue;
+}
+
+.c2,
+.c3 {
+	background-color: white;
+}
+
+.frog {
+	background: green url("frog.svg") no-repeat center;
+}

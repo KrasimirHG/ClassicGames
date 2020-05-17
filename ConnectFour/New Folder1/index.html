@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, inital-scale=1.0" />
+		<title>Connect Four</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="menu">
+				<div class="color-choice">
+					<h3>Choose color for player 1</h3>
+					<input
+						autocomplete="off"
+						id="color1"
+						type="color"
+						value="#ff0000"
+						onchange="console.log(this.value)"
+					/>
+				</div>
+				<div class="color-choice">
+					<h3>Choose color for player 2</h3>
+					<input
+						autocomplete="off"
+						id="color2"
+						type="color"
+						value="#0000ff"
+					/>
+				</div>
+				<div class="dimensions">
+					<h3>Choose numbers of columns</h3>
+					<input
+						autocomplete="off"
+						id="dim-x"
+						type="number"
+						value="7"
+					/>
+				</div>
+				<div class="dimensions">
+					<h3>Choose numbers of rows</h3>
+					<input
+						autocomplete="off"
+						id="dim-y"
+						type="number"
+						value="6"
+					/>
+				</div>
+			</div>
+			<h3>
+				The current Player is: Player <span id="current-player">1</span>
+			</h3>
+			<h3 id="result"></h3>
+			<div class="grid">
+				<!-- <div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="taken"></div>
+				<div class="taken"></div>
+				<div class="taken"></div>
+				<div class="taken"></div>
+				<div class="taken"></div>
+				<div class="taken"></div>
+				<div class="taken"></div> -->
+			</div>
+		</div>
+	</body>
+</html>

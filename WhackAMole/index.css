@@ -1,0 +1,25 @@
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	width: 400px;
+	height: 450px;
+	background-color: lightgrey;
+}
+.mole {
+	display: none;
+}
+.square {
+	background: url(drawing.svg) bottom center no-repeat;
+	width: 100px;
+	height: 150px;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.stat {
+	display: flex;
+	justify-content: space-between;
+}
