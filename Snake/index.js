@@ -56,20 +56,27 @@ window.onload = function() {
 		//check for borders
 		const squares = document.querySelectorAll(".grid div");
 		const x = parseInt(document.querySelector("#dim-x").value);
-
-		let posX;
-		if (currentSnake[0] < x) {
-			posX = currentSnake[0];
-		} else {
-			posX = currentSnake[0] % x;
-		}
-		console.log(currentSnake[0]);
+		const y = parseInt(document.querySelector("#dim-y").value);
+		let posX = currentSnake[0];
+		// if (currentSnake[0] < x) {
+		// 	posX = currentSnake[0];
+		// } else {
+		// 	posX = currentSnake[0] % x;
+		// }
+		// console.log(currentSnake[0]);
+		// if (
+		// 	(posX + direction === x && direction === 1) || // the right side is reached
+		// 	(posX + direction < 0 && direction === -1) || //left side
+		// 	(currentSnake[0] + x >= squares.length && direction === x) || //bottom
+		// 	(currentSnake[0] - x < 0 && direction === -x) || //top
+		// 	squares[currentSnake[0] + direction].classList.contains("snake")
+		// )
 		if (
-			(posX + direction === x && direction === 1) || // the right side is reached
-			(posX + direction < 0 && direction === -1) || //left side
-			(currentSnake[0] + x >= squares.length && direction === x) || //bottom
-			(currentSnake[0] - x < 0 && direction === -x) || //top
-			squares[currentSnake[0] + direction].classList.contains("snake")
+			(posX % x === x - 1 && direction === 1) || // the right side is reached
+			(posX % x === 0 && direction === -1) || //left side
+			(posX + x >= x * y && direction === x) || //bottom
+			(posX - x < 0 && direction === -x) || //top
+			squares[posX + direction].classList.contains("snake")
 		) {
 			clearInterval(interval);
 		}
@@ -109,6 +116,19 @@ window.onload = function() {
 			direction = +x;
 		}
 	}
+
+	function clearBoard() {
+		grid.innerHTML = "";
+		result.innerHTML = "";
+	}
+
+	function playAgain() {
+		clearBoard();
+		createBoard();
+	}
+
+	const dims = document.querySelectorAll(".dimensions");
+	dims.forEach((dim) => dim.addEventListener("change", playAgain));
 
 	document.addEventListener("keyup", control);
 
