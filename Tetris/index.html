@@ -15,45 +15,6 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="row menu">
-				<div class="col-12 col-sm-6 col-md-3 color-choice">
-					<h3>Choose color for player 1</h3>
-					<input
-						autocomplete="off"
-						id="color1"
-						type="color"
-						value="#ff0000"
-						onchange="console.log(this.value)"
-					/>
-				</div>
-				<div class="col-12 col-sm-6 col-md-3 color-choice">
-					<h3>Choose color for player 2</h3>
-					<input
-						autocomplete="off"
-						id="color2"
-						type="color"
-						value="#0000ff"
-					/>
-				</div>
-				<div class="col-12 col-sm-6 col-md-3 dimensions">
-					<h3>Choose numbers of columns</h3>
-					<input
-						autocomplete="off"
-						id="dim-x"
-						type="number"
-						value="10"
-					/>
-				</div>
-				<div class="col-12 col-sm-6 col-md-3 dimensions">
-					<h3>Choose numbers of rows</h3>
-					<input
-						autocomplete="off"
-						id="dim-y"
-						type="number"
-						value="15"
-					/>
-				</div>
-			</div>
 			<div class="start">
 				<button class="btn btn-danger" id="start">
 					Start/Pause
@@ -67,10 +28,6 @@
 				</button>
 			</div>
 			<div class="stat">
-				<!-- <h3>
-					The current Player is: Player
-					<span id="current-player">1</span>
-				</h3> -->
 				<h3>Result : <span id="result"></span></h3>
 			</div>
 
