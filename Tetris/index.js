@@ -1,17 +1,16 @@
-window.onload = function () {
+window.onload = function() {
 	const grid = document.querySelector(".grid");
 
 	const startButton = document.querySelector("#start");
 
-	const y = parseInt(document.querySelector("#dim-y").value);
-	console.log("y is ", y);
-	document.querySelector("#dim-x").addEventListener("change", clearBoard);
-	const x = parseInt(document.querySelector("#dim-x").value);
-	console.log("x is ", x);
-	document.querySelector("#dim-y").addEventListener("change", clearBoard);
-	//let currentPosition = Math.floor(x / 2 - 1);
+	const x = 12;
+	const y = 15;
+	let random;
+	let current;
+	let color;
 	let currentPosition;
 
+	let squares;
 	let currentRotation = 0;
 	const colors = [
 		"url(blue_block.png)",
@@ -24,13 +23,10 @@ window.onload = function () {
 	let timer;
 	const result = document.querySelector("#result");
 	let currentIndex = 0;
-	//let row = [];
+
 	let score = 0;
 
 	function createBoard() {
-		const y = parseInt(document.querySelector("#dim-y").value);
-
-		const x = parseInt(document.querySelector("#dim-x").value);
 		currentPosition = Math.floor(x / 2 - 1);
 		let wid = 20 * x;
 		let hei = 20 * y;
@@ -49,7 +45,8 @@ window.onload = function () {
 	}
 
 	createBoard();
-	let squares = Array.from(grid.querySelectorAll("div"));
+	squares = Array.from(grid.querySelectorAll("div"));
+	console.log(squares);
 
 	function control(e) {
 		console.log(e.keyCode);
@@ -109,12 +106,12 @@ window.onload = function () {
 	];
 
 	//Select random tetramino
-	let random = Math.floor(Math.random() * theTetrominoes.length);
+	random = Math.floor(Math.random() * theTetrominoes.length);
 	console.log("random is ", random);
 	//Select current rotation
-	let current = theTetrominoes[random][currentRotation];
+	current = theTetrominoes[random][currentRotation];
 	console.log("current is ", current);
-	let color = Math.floor(Math.random() * colors.length);
+	color = Math.floor(Math.random() * colors.length);
 
 	//draw the tetramino
 	function draw() {
@@ -234,6 +231,7 @@ window.onload = function () {
 			random = Math.floor(Math.random() * theTetrominoes.length);
 			current = theTetrominoes[random][currentRotation];
 			color = Math.floor(Math.random() * colors.length);
+			//x = parseInt(document.querySelector("#dim-x").value);
 			currentPosition = Math.floor(x / 2 - 1);
 			draw();
 			res();
@@ -261,19 +259,7 @@ window.onload = function () {
 			}
 			const row = red;
 			red = [];
-			// console.log(row);
-			// const row = [
-			// 	currentIndex,
-			// 	currentIndex + 1,
-			// 	currentIndex + 2,
-			// 	currentIndex + 3,
-			// 	currentIndex + 4,
-			// 	currentIndex + 5,
-			// 	currentIndex + 6,
-			// 	currentIndex + 7,
-			// 	currentIndex + 8,
-			// 	currentIndex + 9,
-			// ];
+
 			console.log(row);
 			if (
 				row.every((index) =>
@@ -295,13 +281,6 @@ window.onload = function () {
 				squares.forEach((cell) => grid.appendChild(cell));
 			}
 		}
-	}
-
-	function clearBoard() {
-		grid.innerHTML = "";
-		result.innerHTML = "";
-
-		createBoard();
 	}
 
 	startButton.addEventListener("click", () => {
